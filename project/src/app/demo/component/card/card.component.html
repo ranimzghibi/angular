@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire de Commande</title>
+</head>
+<body>
+
+<h2 align="center">Passer votre Commande</h2>
+
+<form [formGroup]="CommendeForm" (ngSubmit)="addCommende()">
+  <label for="nom">Nom:</label>
+  <input type="text" id="nom" name="nom" formControlName="nom" required>
+
+  <label for="prenom">Prénom:</label>
+  <input type="text" id="prenom" name="prenom" formControlName="prenom" required>
+
+  <label for="tel">Téléphone:</label>
+  <input type="tel" id="tel" name="tel" formControlName="tel" required>
+
+  <label for="quantite">Quantité Commandée:</label>
+  <input type="number" id="quantite" name="quantite" formControlName="quantite" required>
+
+  <button type="submit">Passer la Commande</button>
+</form>
+
+</body>
+</html>

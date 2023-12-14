@@ -1,0 +1,39 @@
+{
+  "employees": [
+    {
+      "name": "ranim ee",
+      "status": "Inactive",
+      "tel": "25478963",
+      "email": "ranim@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "seif",
+      "status": "active",
+      "tel": "20458741",
+      "email": "admin@gmail.com",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "name": "ranim",
+      "status": "inactive",
+      "tel": "99820250",
+      "email": "ranim@gmail.com"
+    },
+    {
+      "id": 7,
+      "name": "seif ddine",
+      "status": "inactive",
+      "tel": "99820250",
+      "email": "ranim@gmail.com"
+    },
+    {
+      "name": "roua",
+      "status": "active",
+      "tel": "99820250",
+      "email": "ranim@gmail.com",
+      "id": 8
+    }
+  ]
+}

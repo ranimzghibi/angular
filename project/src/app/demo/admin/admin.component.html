@@ -1,0 +1,106 @@
+<div class="row">
+    <div class="col-sm-12">
+        <a href="/index" class="bout">deconnecter</a>
+        <p>Espace admin</p>
+        
+      <div class="card">
+        <div class="card-header">
+          <h2>les produits disponible</h2>
+          <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col" width="20px">Image</th>
+              <th scope="col" width="20px">Nom de prod</th>
+              <th scope="col" width="200px">descripton</th>
+              <th scope="col" width="50px">Prix</th>
+              <th scope="col" width="20px">Edit</th>
+              <th scope="col" width="20px">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+           <tr *ngFor="let product of products">
+            <h5 class="card-header"><img [src]="product.image" width="80%"></h5>
+              <td>{{product.name}}</td>
+              <td>{{product.description}}</td>
+              <td>{{product.price}}</td>
+              
+              <td><a class="btnk"(click)="editProduit(product)">modifier</a></td>
+             <td><a class="btnk" (click)="deleteProduct(product.id)">supprimer</a></td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="br" (click)="showForm = !showForm">
+    {{showForm ? 'Hide' : 'Show'}} Form
+  </button>
+  
+<form [formGroup]="ProductForm" *ngIf="showForm && !editingId" (ngSubmit)="addProduct()">
+    
+    <label for="id">ID :</label>
+    <input type="text" id="id" formControlName="id" required>
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name" required>
+  
+    <label for="description">Description :</label>
+    <input type="text" id="description" formControlName="description" required>
+  
+    <label for="image">Image :</label>
+    <input type="text" id="image" formControlName="image" required>
+  
+    <label for="price">Prix :</label>
+    <input type="text" id="price" formControlName="price" required>
+  
+    <button class="btnk" type="submit">Add product</button>
+  </form>
+
+  
+  <form [formGroup]="ProductForm" *ngIf="showForm && editingId" (ngSubmit)="updateProduct()">
+    <label for="id">ID :</label>
+    <input type="text" id="id" formControlName="id" required>
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name" required>
+  
+    <label for="description">Description :</label>
+    <input type="text" id="description" formControlName="description" required>
+  
+    <label for="image">Image :</label>
+    <input type="text" id="image" formControlName="image" required>
+  
+    <label for="price">Prix :</label>
+    <input type="text" id="price" formControlName="price" required>
+  
+    <button class="btn btn-primary" type="submit">Update</button>
+    <button class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+</form>
+
+<div class="card">
+  <div class="card-header">
+    <h2>les commendes</h2>
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" width="20px">Nom client</th>
+        <th scope="col" width="20px">prenom client</th>
+        <th scope="col" width="100px">telephone</th>
+        <th scope="col" width="50px">Quantite commandee</th>
+        <th scope="col" width="50px">l id de produit </th>
+        <th scope="col" width="50px">supprimer commende </th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let cmd of commendes">
+        <td>{{cmd.nom}}</td>
+        <td>{{cmd.prenom}}</td>
+        <td>{{cmd.tel}}</td>
+        <td>{{cmd.quantite}}</td>
+        <td>{{cmd.id}}</td>
+        <td align="center"><a class="btn btn-danger" (click)="deleteCommende(cmd.id)">x</a></td>
+        
+      </tr>
+    </tbody>
+    </table>
+  </div>
+</div>

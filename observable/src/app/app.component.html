@@ -1,0 +1,9 @@
+<div>
+  <h1>Compteur</h1>
+  <button (click)="startCounter()">Start</button>
+  <button (click)="stopCounter()">Stop</button>
+</div>
+
+<div>
+  {{ counter$ | async }}
+</div>

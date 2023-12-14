@@ -1,0 +1,29 @@
+<!-- [ Main Content ] start -->
+<div class="row">
+  <!-- [ Typography ] start -->
+  <div class="col-sm-12">
+    <b><h3 align="center">Liste des produits disponibles</h3></b>
+    
+    <div class="card-header">
+      <div class="row"> <!-- Ajoutez une ligne ici -->
+        <div class="col-md-4" *ngFor="let product of products"> <!-- Changez col-xl-4 en col-md-4 et déplacez *ngFor ici -->
+          <div class="card">
+            <div class="pc-component">
+              <div class="card">
+                <h5 class="card-header"><img [src]="product.image" width="100%"></h5>
+                <div class="card-body">
+                  <h5 class="card-title">{{product.name}}</h5>
+                  <p class="card-text">{{product.description}}</p>
+                  <h6 align="right">{{product.price}}TND</h6>
+                  <a *ngIf="product.id" [href]="'../card?id=' + product.id"  class="btn btn-success">Acheter</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [ Typography ] end -->
+</div>
+<!-- [ Main Content ] end -->

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmation de Commande</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      transition: background-color 0.5s;
+    }
+
+    .confirmation-container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+      transform: scale(0);
+      animation: pop 0.3s forwards;
+    }
+
+    .confirmation-header {
+      background-color: #1D7A8C;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .confirmation-body {
+      padding: 20px;
+    }
+
+    .confirmation-icon {
+      font-size: 48px;
+      color: #ED8074;
+    }
+
+    .confirmation-message {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .confirmation-button {
+      background-color: #1D7A8C;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .confirmation-button:hover {
+      background-color: #27ae60;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #7f8c8d;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0);
+      }
+      80% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="confirmation-container">
+  <div class="confirmation-header">
+    <i class="confirmation-icon">✔</i>
+    <h2>Confirmation de Commande</h2>
+  </div>
+
+  <div class="confirmation-body">
+    <p class="confirmation-message">Merci pour votre commande !</p>
+    <p class="confirmation-message">Nous traitons votre commande et vous contacterons bientôt.</p>
+    <p class="confirmation-message">attend notre appel cher(e) client(e) !</p>
+    <!--<button class="confirmation-button" onclick="makePhoneCall()">Appeler Maintenant</button>-->
+  </div>
+
+  <div class="footer">
+    <p>Merci pour votre confiance. © 2023 R_SHOP.</p>
+  </div>
+  <!--<button (click)="downloadAsPDF()">Convertir en PDF</button>-->
+
+</div>
+
+
+
+</body>
+</html>

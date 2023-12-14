@@ -1,0 +1,65 @@
+<h1 align="center">Angular CRUD pour la gestion des employees</h1>
+<table border="1" style="width: 60%">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Tel</th>
+    <th>Email</th>
+    <th>modifier</th>
+    <th>supprimer</th>
+  </tr>
+  <tr *ngFor="let emp of employees">
+    <td>{{ emp.id }}</td>
+    <td>{{ emp.name }}</td>
+    <td>{{ emp.status }}</td>
+    <td>{{ emp.tel }}</td>
+    <td>{{ emp.email }}</td>
+    <td>
+      <button class="btn btn-primary" (click)="editEmployee(emp)">Edit</button>
+    </td>
+    <td>
+      <button class="btn btn-danger" (click)="deleteEmployee(emp.id)">Delete</button>
+    </td>
+  </tr>
+</table>
+<br />
+
+<!-- Ajoutez ce bouton pour afficher le formulaire -->
+<button class="btn btn-primary" (click)="showForm = !showForm">
+  {{showForm ? 'Hide' : 'Show'}} Form
+</button>
+
+
+<form [formGroup]="employeeForm" *ngIf="showForm && !editingId" (ngSubmit)="addEmployee()">
+  <label for="name">Name:</label>
+  <input type="text" id="name" formControlName="name" required>
+
+  <label for="status">Status:</label>
+  <input type="text" id="status" formControlName="status" required>
+
+  <label for="tel">Tel:</label>
+  <input type="text" id="tel" formControlName="tel" required>
+
+  <label for="email">Email:</label>
+  <input type="text" id="email" formControlName="email" required>
+
+  <button class="btn btn-success" type="submit">Add Employee</button>
+</form>
+
+<form [formGroup]="employeeForm" *ngIf="showForm && editingId" (ngSubmit)="updateEmployee()">
+  <label for="name">Name:</label>
+  <input type="text" id="name" formControlName="name" required>
+
+  <label for="status">Status:</label>
+  <input type="text" id="status" formControlName="status" required>
+
+  <label for="tel">Tel:</label>
+  <input type="text" id="tel" formControlName="tel" required>
+
+  <label for="email">Email:</label>
+  <input type="text" id="email" formControlName="email" required>
+
+  <button class="btn btn-primary" type="submit">Update</button>
+  <button class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+</form>

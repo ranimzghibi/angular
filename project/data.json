@@ -1,0 +1,42 @@
+{
+  "commande": [],
+  "user": [
+    {
+      "username": "admin",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "first_name": "ranim",
+      "last_name": "zghibi",
+      "username": "ranim@gmail.com",
+      "password": "ranim",
+      "role": "customer"
+    }
+  ],
+  "products": [
+    {
+      "name": "Bouquet de Roses Rouges",
+      "id": 2,
+      "image": "https://images.squarespace-cdn.com/content/v1/5a2d9772914e6b4aaeea0989/1598897855193-A8N6L188FQY1NVNBHQ6K/BOYA-boutique-fa%25C3%25A7ade-devanture-plantes-exterieur.jpg?format=1000w",
+      "description": "Un bouquet de roses rouges fraîchement cueillies, parfait pour exprimer l'amour et l'appréciation.",
+      "price": "650"
+    },
+    {
+      "id": 3,
+      "type": "Fleurs",
+      "description": "Un arrangement floral exotique avec des orchidées rares, idéal pour les amateurs de plantes uniques.",
+      "name": "Arrangement d'Orchidées Exotiques",
+      "price": 50,
+      "image": "https://cdn-s-www.lejsl.com/images/EE1E065B-DCF0-4340-A2D4-F4864BD406A0/NW_raw/la-boutique-quot-les-fleurs-de-suzanne-quot-est-installee-au-52-rue-carnot-photo-jsl-anny-heinzle-1646343354.jpg"
+    },
+    {
+      "id": 4,
+      "type": "Fleurs",
+      "description": "Un bouquet de marguerites colorées, un cadeau joyeux pour toutes les occasions,idéal pour les amateurs de plantes uniques.",
+      "name": "Bouquet de Marguerites Colorées",
+      "price": 30,
+      "image": "https://pokaa.fr/wp-content/uploads/2021/11/decoration-plantes-sechees-tchungle-image00023.jpeg"
+    }
+  ]
+}
